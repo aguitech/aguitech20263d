@@ -83,25 +83,42 @@
     shield:   '<svg viewBox="0 0 24 24"><path d="M12 2l8 4v7c0 5-4 8-8 9-4-1-8-4-8-9V6l8-4z"/></svg>',
   };
 
+  // ============== PROYECTOS REALES DE AGUITECH.COM ==============
   const showcase = [
-    { cat: 'ECOMMERCE', title: 'Luxe Boutique Online', meta: 'Shopify Plus · 2025', hue: 200 },
-    { cat: 'WEB 3D',    title: 'Configurator Auto',    meta: 'Three.js · 2026',    hue: 320 },
-    { cat: 'SISTEMA',   title: 'CRM a Medida',         meta: 'Node · React · 2025', hue: 280 },
-    { cat: 'APPS',      title: 'Fitness Tracker Pro',  meta: 'Flutter · 2025',     hue: 180 },
-    { cat: 'IA',        title: 'Asistente WhatsApp',   meta: 'GPT-4 · 2026',       hue: 30  },
-    { cat: 'VR',        title: 'Showroom Inmersivo',   meta: 'WebXR · Unity · 2026',hue: 240 },
+    { cat: 'ECOMMERCE', title: 'Codimexa',            desc: 'Sistema punto de venta, inventario y administración empresarial',     meta: 'E-commerce · 2026',     hue: 200, url: 'https://codimexa.com/' },
+    { cat: 'SISTEMA',   title: 'Ascend',              desc: 'Sistema de cobranza web con hosting y dashboard operativo',          meta: 'Web · 2025',            hue: 320, url: 'https://aguitech.com' },
+    { cat: 'WEB',       title: 'TopCarDetailing',     desc: 'Sitio web + hosting + redes sociales para detailing automotriz',     meta: 'Web · Redes · 2025',    hue: 280, url: 'https://aguitech.com' },
+    { cat: 'WEB',       title: 'EtiquetasSG',         desc: 'Sitio web + hosting para imprenta de etiquetas industriales',       meta: 'Web · 2025',            hue: 180, url: 'https://aguitech.com' },
+    { cat: 'WEB',       title: 'Demus',               desc: 'Sitio web + hosting para estudio creativo musical',                  meta: 'Web · 2025',            hue: 30,  url: 'https://aguitech.com' },
+    { cat: 'WEB',       title: 'Sevigne',             desc: 'Sitio web + hosting para boutique de moda',                          meta: 'Web · 2025',            hue: 240, url: 'https://aguitech.com' },
+    { cat: 'PARTNER',   title: 'Adbyte',              desc: 'Sitio web + partnership comercial estratégico',                       meta: 'Partner · 2025',        hue: 160, url: 'https://aguitech.com' },
+    { cat: 'APPS',      title: 'Gentera / Compartamos Banco', desc: 'App Android con gestión de biométricos a nivel nacional',     meta: 'Android · Nacional',    hue: 340, url: 'https://aguitech.com' },
+    { cat: 'APPS',      title: 'Santander SuperNet',  desc: 'Participación en SuperNet de Santander',                              meta: 'Web App · 2024',        hue: 0,   url: 'https://aguitech.com' },
+    { cat: 'MARKETING', title: 'Corona · 1M Seguidores', desc: 'Redes sociales a 1M seguidores con Leo Burnett',                  meta: 'Social Media · 2024',   hue: 60,  url: 'https://aguitech.com' },
+    { cat: 'WEB',       title: 'McDonald\'s Chiken McBites', desc: 'Sitio de lanzamiento Chiken McBites en Panamá y Puerto Rico', meta: 'Web · 2023',            hue: 100, url: 'https://aguitech.com' },
+    { cat: 'CRM',       title: 'BBVA · LOPD',         desc: 'Prevención de lavado de dinero + sitio web de seguros',              meta: 'Enterprise · 2023',     hue: 220, url: 'https://aguitech.com' },
   ];
 
+  // ============== CASOS DE ÉXITO DESTACADOS ==============
   const clientes = [
-    { name: 'Boutique MX',    init: 'B', color: '#00f0ff' },
-    { name: 'Logística Norte',init: 'LN', color: '#ff0080' },
-    { name: 'Cafeína Studio', init: 'CS', color: '#7000ff' },
-    { name: 'Bienes Raíces Plus', init: 'BR', color: '#ffb800' },
-    { name: 'Auto Sport MX',  init: 'AS', color: '#00ff88' },
-    { name: 'Grupo Reforma',  init: 'GR', color: '#ff5500' },
-    { name: 'Clínica Vital',  init: 'CV', color: '#00ddff' },
-    { name: 'Estudio Tribal', init: 'ET', color: '#ff00aa' },
+    { name: 'Codimexa',                init: 'CO', color: '#00f0ff', url: 'https://codimexa.com/' },
+    { name: 'TopCarDetailing',         init: 'TC', color: '#ff0080', url: 'https://aguitech.com' },
+    { name: 'Ascend',                  init: 'AS', color: '#7000ff', url: 'https://aguitech.com' },
+    { name: 'EtiquetasSG',             init: 'ES', color: '#ffb800', url: 'https://aguitech.com' },
+    { name: 'Demus',                   init: 'DM', color: '#00ff88', url: 'https://aguitech.com' },
+    { name: 'Sevigne',                 init: 'SV', color: '#ff5500', url: 'https://aguitech.com' },
+    { name: 'Adbyte',                  init: 'AB', color: '#00ddff', url: 'https://aguitech.com' },
+    { name: 'Cielo Estrellado',        init: 'CE', color: '#ff00aa', url: 'https://aguitech.com' },
+    { name: 'Gentera · Compartamos',   init: 'GE', color: '#9d4edd', url: 'https://aguitech.com' },
+    { name: 'Santander',               init: 'SA', color: '#ec0000', url: 'https://aguitech.com' },
+    { name: 'Corona',                  init: 'CR', color: '#ffb800', url: 'https://aguitech.com' },
+    { name: 'McDonald\'s',             init: 'MC', color: '#ffc800', url: 'https://aguitech.com' },
   ];
+
+  const linksExternos = {
+    aguitech: { url: 'https://aguitech.com',          logo: 'img/logos/aguitech.webp', name: 'Aguitech Studio' },
+    codimexa: { url: 'https://codimexa.com/',          logo: 'img/logos/codimexa.webp', name: 'Codimexa' },
+  };
 
   // ============== INIT ==============
   document.addEventListener('DOMContentLoaded', () => {
@@ -184,7 +201,7 @@
       const c2 = `hsl(${(s.hue + 40) % 360}, 80%, 30%)`;
       const big = s.title.charAt(0);
       return `
-        <article class="showcase-card" data-idx="${i}">
+        <a href="${s.url}" target="_blank" rel="noopener" class="showcase-card" data-idx="${i}">
           <div class="showcase-card__bg" style="background: linear-gradient(135deg, ${c1}, ${c2});">
             <span style="font-size: 120px; opacity: .25; color: white;">${big}</span>
           </div>
@@ -192,9 +209,13 @@
           <div class="showcase-card__info">
             <div class="showcase-card__cat">${s.cat}</div>
             <h3 class="showcase-card__title">${s.title}</h3>
-            <div class="showcase-card__meta">${s.meta}</div>
+            <p class="showcase-card__desc-mini">${s.desc || ''}</p>
+            <div class="showcase-card__meta">
+              <span>${s.meta}</span>
+              <span class="showcase-card__arrow">→</span>
+            </div>
           </div>
-        </article>
+        </a>
       `;
     }).join('');
   }
@@ -204,11 +225,12 @@
     const grid = document.getElementById('clientes-grid');
     if (!grid) return;
     grid.innerHTML = clientes.map(c => `
-      <article class="cliente-card" style="--c: ${c.color}">
+      <a href="${c.url}" target="_blank" rel="noopener" class="cliente-card" style="--c: ${c.color}">
         <div class="cliente-card__glow"></div>
         <div class="cliente-card__init" style="background: linear-gradient(135deg, ${c.color}, #fff); -webkit-background-clip: text; background-clip: text;">${c.init}</div>
         <div class="cliente-card__name">${c.name}</div>
-      </article>
+        <div class="cliente-card__visit">VISITAR ↗</div>
+      </a>
     `).join('');
   }
 
@@ -217,7 +239,7 @@
     if (!track) return;
     const items = [...clientes, ...clientes]; // duplicar para loop
     track.innerHTML = items.map(c =>
-      `<div class="marquee__item">${c.name}</div>`
+      `<a href="${c.url}" target="_blank" rel="noopener" class="marquee__item">${c.name}</a>`
     ).join('');
   }
 
