@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGUITECH 2026 3D — Transformación Digital Premium</title>
+  <meta name="description" content="Aguitech 2026 3D — Desarrollo web premium, apps a medida, e-commerce, marketing digital, IA, 3D y realidad virtual. Experiencias web futuristas con scroll-3D interactivo." />
+  <meta property="og:title" content="AGUITECH 2026 3D" />
+  <meta property="og:description" content="Transformación Digital Premium — Creamos experiencias web futuristas." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <!-- VIDEO BG -->
+  <div class="video-bg" aria-hidden="true">
+    <video id="bg-video" autoplay muted loop playsinline poster="">
+      <source src="videos/bg.webm" type="video/webm" />
+    </video>
+    <div class="video-bg__overlay"></div>
+    <div class="video-bg__grid"></div>
+  </div>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader">
+    <div class="loader__ring"></div>
+    <div class="loader__text">AGUITECH · 2026</div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__logo">
+      <span class="nav__logo-mark">A</span>
+      <span class="nav__logo-text">GUITECH</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#showcase">Showcase</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#video">Video</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="nav__cta">Hablemos</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__3d" id="hero-3d">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero__3d-fallback" id="hero-fallback">
+        <div class="hero__3d-placeholder">
+          <div class="hero__3d-ring"></div>
+          <div class="hero__3d-ring hero__3d-ring--2"></div>
+          <div class="hero__3d-ring hero__3d-ring--3"></div>
+          <div class="hero__3d-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        EDICIÓN 2026 · 3D INTERACTIVO
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__title-line" data-reveal>Transformación</span>
+        <span class="hero__title-line hero__title-line--accent" data-reveal>Digital</span>
+        <span class="hero__title-line" data-reveal>Premium</span>
+      </h1>
+      <p class="hero__sub" data-reveal>
+        Creamos experiencias web futuristas, sistemas a medida y
+        universos 3D que impulsan tu negocio. Scroll para descubrir.
+      </p>
+      <div class="hero__cta" data-reveal>
+        <a href="#servicios" class="btn btn--primary">Ver servicios</a>
+        <a href="#showcase" class="btn btn--ghost">Ver showcase</a>
+      </div>
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <div class="hero__stat-num" data-count="120">0</div>
+        <div class="hero__stat-label">Proyectos</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-num" data-count="8">0</div>
+        <div class="hero__stat-label">Años</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-num" data-count="64">0</div>
+        <div class="hero__stat-label">Clientes</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-num" data-count="3">0</div>
+        <div class="hero__stat-label">Diques 3D</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS / CARRUSEL -->
+  <section class="section servicios" id="servicios">
+    <div class="section__head">
+      <span class="section__eyebrow">// 01 · SERVICIOS</span>
+      <h2 class="section__title">Lo que <em>construimos</em></h2>
+      <p class="section__lede">
+        8 áreas de expertise. Una sola promesa: productos digitales
+        que se ven, se sienten y funcionan como premium.
+      </p>
+    </div>
+
+    <div class="carrusel" id="carrusel">
+      <div class="carrusel__track" id="carrusel-track">
+        <!-- 8 slides inyectados por JS -->
+      </div>
+      <div class="carrusel__nav">
+        <button class="carrusel__btn" id="carrusel-prev" aria-label="Anterior">←</button>
+        <div class="carrusel__dots" id="carrusel-dots"></div>
+        <button class="carrusel__btn" id="carrusel-next" aria-label="Siguiente">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE / PORTAFOLIO -->
+  <section class="section showcase" id="showcase">
+    <div class="section__head">
+      <span class="section__eyebrow">// 02 · SHOWCASE</span>
+      <h2 class="section__title">Trabajo <em>reciente</em></h2>
+      <p class="section__lede">
+        Sitios, sistemas y universos 3D entregados en 2025–2026.
+        Toca una tarjeta para previsualizar.
+      </p>
+    </div>
+
+    <div class="showcase__grid" id="showcase-grid">
+      <!-- 6 cards inyectadas por JS -->
+    </div>
+  </section>
+
+  <!-- LOGO WALL / CLIENTES -->
+  <section class="section clientes" id="clientes">
+    <div class="section__head">
+      <span class="section__eyebrow">// 03 · CLIENTES</span>
+      <h2 class="section__title">Marcas que <em>confían</em></h2>
+      <p class="section__lede">
+        De startups a corporativos. Estos son algunos de los
+        equipos con los que hemos construido producto.
+      </p>
+    </div>
+
+    <div class="marquee">
+      <div class="marquee__track" id="marquee-track">
+        <!-- logos inyectados por JS -->
+      </div>
+    </div>
+
+    <div class="clientes__grid" id="clientes-grid">
+      <!-- 8 cards con iniciales 3D inyectadas por JS -->
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="section video-section" id="video">
+    <div class="section__head">
+      <span class="section__eyebrow">// 04 · EN ACCIÓN</span>
+      <h2 class="section__title">Lo que <em>hacemos</em> se mueve</h2>
+      <p class="section__lede">
+        Un vistazo al tipo de cosas que entregamos: animaciones,
+        sitios vivos, productos que se sienten vivos.
+      </p>
+    </div>
+
+    <div class="video-section__frame" id="video-frame">
+      <div class="video-section__play" id="video-play">
+        <div class="video-section__play-icon">▶</div>
+      </div>
+      <div class="video-section__caption">
+        <span>Showreel 2026</span>
+        <span class="video-section__caption-dot">·</span>
+        <span>0:42</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACTO -->
+  <section class="section contacto" id="contacto">
+    <div class="contacto__inner">
+      <div class="contacto__head">
+        <span class="section__eyebrow">// 05 · HABLEMOS</span>
+        <h2 class="contacto__title">
+          ¿Listo para construir<br />
+          algo <em>brutal</em>?
+        </h2>
+        <p class="contacto__lede">
+          Cuéntanos qué tienes en mente. Respondemos en menos
+          de 24 horas con una primera propuesta.
+        </p>
+      </div>
+
+      <form class="contacto__form" id="contacto-form" novalidate>
+        <div class="contacto__field">
+          <label for="f-name">Nombre</label>
+          <input id="f-name" name="name" type="text" required placeholder="Tu nombre" />
+        </div>
+        <div class="contacto__field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required placeholder="tu@correo.com" />
+        </div>
+        <div class="contacto__field contacto__field--full">
+          <label for="f-msg">Cuéntanos del proyecto</label>
+          <textarea id="f-msg" name="message" rows="4" required placeholder="Sitio web, app, 3D, e-commerce, marketing..."></textarea>
+        </div>
+        <button class="btn btn--primary btn--big" type="submit">
+          Enviar mensaje 🚀
+        </button>
+        <div class="contacto__status" id="contacto-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <div class="footer__logo">AGUITECH <span>2026</span></div>
+        <p>Transformación Digital Premium.</p>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li>Web & Sistemas</li>
+            <li>Apps móviles</li>
+            <li>E-commerce</li>
+            <li>Marketing & IA</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Estudio</h4>
+          <ul>
+            <li>Showcase</li>
+            <li>Clientes</li>
+            <li>Proceso</li>
+            <li>Carrera</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>contacto@aguitech.com</li>
+            <li>+52 ···· ····</li>
+            <li>CDMX · Remoto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Aguitech Studio · Todos los derechos reservados</span>
+      <span>Hecho con scroll, física y mucho café</span>
+    </div>
+  </footer>
+
+  <script defer src="js/app.js"></script>
+</body>
+</html>
